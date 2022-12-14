@@ -36,7 +36,7 @@ def Send_high():
         "disable_web_page_preview": False,
         "disable_notification": False,
         "reply_to_message_id": None,
-        "chat_id": "831552899"
+        "chat_id": "-1001691472772"
     }
     headers = {
         "accept": "application/json",
@@ -55,14 +55,14 @@ def Send_low():
     import requests
     import json
 
-    url = "https://api.telegram.org/bot5820846301%3AAAHYbFAlHnqDfzbHFPZHdO1O1u6Y21UJzVg/sendMessage"
+    url = "https://api.telegram.org/bot5921643018:AAHmiFfQudRMNZNl3sG19zafMZD0OdfWGgA/sendMessage"
 
     payload = {
         "text": "Count is less than 10",
         "disable_web_page_preview": False,
         "disable_notification": False,
         "reply_to_message_id": None,
-        "chat_id": "831552899"
+        "chat_id": "-1001691472772"
     }
     headers = {
         "accept": "application/json",
@@ -81,7 +81,7 @@ import requests
 
 
 
-# In[ ]:
+# In[7]:
 
 
 import requests
