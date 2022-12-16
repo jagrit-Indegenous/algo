@@ -25,7 +25,7 @@ condition= '( {cash} ( monthly rsi( 14 ) > 60 and weekly rsi( 14 ) > 60 and late
 # In[4]:
 
 
-def Send_high():    
+def Send_high():
     import requests
     import json
 
@@ -51,7 +51,7 @@ def Send_high():
 # In[5]:
 
 
-def Send_low():    
+def Send_low():
     import requests
     import json
 
@@ -82,7 +82,14 @@ import requests
 
 
 # In[7]:
+from datetime import datetime
+import pytz
 
+UTC = pytz.utc
+
+IST = pytz.timezone('Asia/Kolkata')
+
+datetime_ist = datetime.now(IST)
 
 import requests
 from bs4 import BeautifulSoup as bs
@@ -92,7 +99,7 @@ import time
 # data = {
 #   'scan_clause': '( {cash} ( monthly rsi( 14 ) > 60 and weekly rsi( 14 ) > 60 and latest rsi( 14 ) > 60 and 1 day ago  rsi( 14 ) <= 60 and latest volume > 100000 ) ) '
 # }
-interval= 5
+interval= 1
 
 def periodic_work(interval):
     counter = 0
@@ -116,6 +123,9 @@ def periodic_work(interval):
                 print("len",len(column))
                 counter = counter + 1
                 print(counter)
+                datetime_ist = datetime.now(IST)
+                print(datetime_ist.strftime('%Y:%m:%d %H:%M:%S %Z %z'))
+
 
                 if(len(column)>=40):
 
@@ -128,7 +138,7 @@ def periodic_work(interval):
                     interval= 300
                     print(df)
                 else:
-                    interval=5 
+                    interval=1
 
                 #interval should be an integer, the number of seconds to wait
 
@@ -138,7 +148,7 @@ def periodic_work(interval):
             print("ERROR : "+str(e))
         
 
-periodic_work(5)  
+periodic_work(1)  
 
         
 
