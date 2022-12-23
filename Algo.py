@@ -127,15 +127,15 @@ def periodic_work(interval):
                 print(datetime_ist.strftime('%Y:%m:%d %H:%M:%S %Z %z'))
 
 
-                if(len(column)>=40):
-
+                if(len(column)<=40):
+    
                     Send_high()
-                    interval= 300
+                    interval= 1
                     print(df)
-                if(len(column)<=10):
+                if(len(column)>=10):
 
                     Send_low()
-                    interval= 300
+                    interval= 1
                     print(df)
                 else:
                     interval=1
